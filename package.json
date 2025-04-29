@@ -1,13 +1,13 @@
 {
   "dependencies": {
     "@types/node": "^22.14.1",
+    "mysql2": "^3.14.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
   "name": "solidtypescript",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
