@@ -1,4 +1,4 @@
-import { Request, Response} from "express";
+import {Request, Response} from "express";
 import Cliente from "../classes/cliente";
 import clienteRepository from "../repositories/ClienteRepository";
 
