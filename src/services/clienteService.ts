@@ -1,4 +1,4 @@
-import { Request, Response } from "express";;
+import { Request, Response } from "express";
 import Cliente from "../classes/cliente";
 import clienteRepository from "../repositories/ClienteRepository";
 
@@ -12,8 +12,12 @@ export default class ClienteService{
         cli.telefone = req.body.telefone;
         cli.aniversario = req.body.aniversario;
         cli.endereco = req.body.endereco;
-
-        const rs = await this.CliRepository.cadastrar(cli);
-        return rs;
+        try {
+            const rs = await this.CliRepository.cadastrar(cli);
+            return res.status(201).json(rs);
+        }
+      catch(erro){
+        return res.status(500).json(erro)
+      }
     }
 }
