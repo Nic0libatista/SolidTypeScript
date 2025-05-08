@@ -82,8 +82,52 @@ create table pagamento(
     total_pagar decimal(7,2) not null
 );
 
+-- criar os relacionamentos
+alter table clientes
+add constraint `fk_cliente_pk_endereco`
+foreign key(`id_endereco`)
+references endereco(`id`);
+
+alter table autor
+add constraint `fk_autor_pk_endereco`
+foreign key(`id_endereco`)
+references endereco(`id`);
+
+alter table funcionario
+add constraint `fk_funcionario_pk_endereco`
+foreign key(`id_endereco`)
+references endereco(`id`);
+
+alter table venda
+add constraint `fk_venda_pk_cliente`
+foreign key venda(`id_cliente`)
+references clientes(`id`);
+
+alter table venda
+add constraint `fk_venda_pk_funcionario`
+foreign key venda(`id_funcionario`)
+references funcionario(`id`);
+
+alter table itensvenda
+add constraint `fk_itensvenda_pk_venda`
+foreign key itensvenda(`id_venda`)
+references venda(`id`);
 
 
+alter table itensvenda
+add constraint `fk_itensvenda_pk_produto`
+foreign key itensvenda(`id_produto`)
+references produto(`id`);
+
+alter table pagamento
+add constraint `fk_pagamento_pk_venda`
+foreign key pagamento(`id_venda`)
+references venda(`id`);
+
+
+
+----------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
 
 n esquecer de baixar:
 npm i express mysql2 typescript ts-node @types/node @types/express
