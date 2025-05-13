@@ -1,9 +1,9 @@
-export default class endereco{
-    id!: number;
-    tipo_logradouro!: string;
-    logadouro!: string;
+export default class Endereco{
+    id!:number;
+    tipo_logradouro!:string;
+    logradouro!:string;
     numero!:string;
     complemento?:string;
     cep!:string;
-    bairro!:string
+    bairro!:string;
 }

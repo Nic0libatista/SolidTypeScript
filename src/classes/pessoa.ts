@@ -1,15 +1,22 @@
-import endereco from "./endereco";
-
-// criar a classe pai ou super classe chamada pessoa q passará todos os seus dados ás classes filhas
-
-// a classe pessoa segue o principio O(open/close) do solid, onde temos a classe fechada p modificaçoes e aberta para extensões.
-// o qualificador abstract mantém a classe Pessoa abstrata, n permitindo q ela seja materializada, 
-// ou seja, n poderá ser uma instancia 
+//Criar a classe pai(superclasse) chamada Pessoa
+//que passará todos os seus dados às classes
+//filhas
+/*
+A classe Pessoa segue o Principio O(Open/Close)
+do SOLID, onde , temos a classe fechada para 
+modificações e aberta para extensões. 
+O qualificador abstract(abstrato) mantém a 
+classe Pessoa, sempre abstrata, não permitido
+que ela seja materializada, ou seja, não poderá
+ser uma instância
+*/
+import Endereco from "./Endereco";
 export default abstract class Pessoa{
-    id!: number;
+    id!:number;
     nome!:string;
-    cpf!: string;
+    cpf!:string;
     email!:string;
     telefone?:string;
-    endereco!: endereco;
+    endereco!: Endereco;
+
 }

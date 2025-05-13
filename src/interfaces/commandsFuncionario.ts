@@ -1,7 +1,6 @@
-import commandsPessoa from "./commandsPessoa";
+import CommandsPessoa from "./commandsPessoa";
 
-export default interface commandsFuncionario<T> extends commandsPessoa<T>{
-    pesquisarCargo(cargo:string):Promise<T>[];
-    pesquisarSalario(salario:number):Promise<T>[];
-
+export default interface CommandsFuncionario<T> extends CommandsPessoa<T>{
+    PesquisarCargo(cargo:string):T[]
+    PesquisarSalario(salario:number):T[]
 }

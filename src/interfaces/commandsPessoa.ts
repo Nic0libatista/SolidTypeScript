@@ -1,6 +1,8 @@
-import commands from "./commands";
+import Commands from "./commands";
 
-export default interface commandsPessoa<T> extends commands<T>{
-    pesquisarCPF(cpf:string):Promise<T>;
-    pesquisarEmail(email:string):Promise<T>;
+export default interface CommandsPessoa<T> extends Commands<T>{
+    PesquisarCPF(cpf:string):Promise<T>;
+    PesquisarEmail(email:string):Promise<T>;
+   
+
 }

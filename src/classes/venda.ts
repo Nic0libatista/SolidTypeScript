@@ -1,9 +1,8 @@
-import Cliente from "./cliente";
-import Funcionario from "./funcionario";
-
+import Cliente from "./Cliente";
+import Funcionario from "./Funcionario";
 export default class Venda{
     id!:number;
     cliente!:Cliente;
     funcionario!:Funcionario;
-    data_hora!:Date;
+    data_hora!:Date
 }
