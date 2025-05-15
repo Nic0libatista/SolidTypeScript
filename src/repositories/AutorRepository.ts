@@ -41,7 +41,7 @@ export default class AutorRepository implements CommandsPessoa<Autor>{
                 obj.genero_literario]
             ,(error,result)=>{
                 if(erro){
-                    return reject(error);
+                    return reject(error );
                 }
                 else{
                     return resolve(obj)

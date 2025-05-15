@@ -3,6 +3,8 @@ import cors from "cors";
 import ClienteService from "./services/clienteService";
 import AutorService from "./services/AutorService";
 import FuncionarioService from "./services/FuncionarioService";
+import ProdutoService from "./services/produtoService ";
+import VendaService from "./services/VendaService";
 
 
 
@@ -13,6 +15,8 @@ app.use(cors());
 const cli = new ClienteService();
 const aut = new AutorService();
 const fun = new FuncionarioService()
+const prod = new ProdutoService()
+const ven = new VendaService()
 
 
 app.get("/api/v1/cliente/listar",(req,res)=>{
@@ -43,6 +47,25 @@ app.get("/api/v1/funcionario/listar",(req,res)=>{
 app.post("/api/v1/funcionario/cadastro",(req,res)=>{
     fun.cadastroFuncionario(req,res);
 })
+
+//---------------------------------------------------------------------------
+app.get("/api/v1/produto/listar",(req,res)=>{
+   prod.listarProduto(req,res);
+});
+
+app.post("/api/v1/produto/cadastro",(req,res)=>{
+   prod.cadastroProduto(req,res);
+})
+
+//---------------------------------------------------------------------------
+app.get("/api/v1/venda/listar",(req,res)=>{
+    ven.listarVenda(req,res);
+ });
+ 
+ app.post("/api/v1/venda/cadastro",(req,res)=>{
+    ven.cadastroVenda(req,res);
+ })
+ 
 
 
 app.listen(5000,()=>{

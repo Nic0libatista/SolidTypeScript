@@ -1,5 +1,5 @@
-import Cliente from "./Cliente";
-import Funcionario from "./Funcionario";
+import Cliente from "./cliente";
+import Funcionario from "./funcionario";
 export default class Venda{
     id!:number;
     cliente!:Cliente;
