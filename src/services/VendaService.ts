@@ -1,6 +1,6 @@
 import {Request, Response} from "express";
 import Venda from "../classes/venda";
-import VendaRepository from "../repositories/vendaRepository";
+import VendaRepository from "../repositories/VendaRepository";
 
 export default class VendaService{
     venRepository = new VendaRepository();

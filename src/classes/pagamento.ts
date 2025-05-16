@@ -1,4 +1,4 @@
-import Venda from "./Venda";
+import Venda from "./venda";
 
 export default class Pagamento{
     id!:number;

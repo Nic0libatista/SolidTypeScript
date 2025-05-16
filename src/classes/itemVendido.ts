@@ -1,5 +1,5 @@
-import Produto from "./Produto";
-import Venda from "./Venda";
+import Produto from "./produto";
+import Venda from "./venda";
 export default class ItemVendido{
     id!:number;
     venda!:Venda;

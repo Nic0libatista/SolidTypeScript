@@ -5,6 +5,8 @@ import AutorService from "./services/AutorService";
 import FuncionarioService from "./services/FuncionarioService";
 import ProdutoService from "./services/produtoService ";
 import VendaService from "./services/VendaService";
+import itemVendidoService from "./services/itemVendidoService";
+import Pagamento from "./services/pagamentoService";
 
 
 
@@ -17,6 +19,8 @@ const aut = new AutorService();
 const fun = new FuncionarioService()
 const prod = new ProdutoService()
 const ven = new VendaService()
+const itn = new itemVendidoService()
+const pag = new Pagamento()
 
 
 app.get("/api/v1/cliente/listar",(req,res)=>{
@@ -65,6 +69,27 @@ app.get("/api/v1/venda/listar",(req,res)=>{
  app.post("/api/v1/venda/cadastro",(req,res)=>{
     ven.cadastroVenda(req,res);
  })
+ 
+ //--------------------------------------------------------------------------
+
+ app.get("/api/v1/itemvendido/listar",(req,res)=>{
+   itn.listarItemVendido(req,res);
+ });
+ 
+ app.post("/api/v1/itemvendido/cadastro",(req,res)=>{
+   itn.cadastroItemVendido(req,res);
+ })
+ 
+ //--------------------------------------------------------------------------
+
+ app.get("/api/v1/pagamento/listar",(req,res)=>{
+    pag.listarPagamento(req,res);
+  });
+  
+  app.post("/api/v1/pagamento/cadastro",(req,res)=>{
+    pag.cadastroPagamento(req,res);
+  })
+  
  
 
 
